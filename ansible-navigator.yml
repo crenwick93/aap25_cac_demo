@@ -1,0 +1,17 @@
+---
+ansible-navigator:
+  execution-environment:
+    container-engine: podman
+    enabled: true
+    # environment-variables:
+    #   set:
+    #     ANSIBLE_COLLECTIONS_PATH: /usr/share/ansible/collections:/root/local_collections:/root/collections
+    image: localhost/aap-cac-ee.yml:latest
+    pull:
+      policy: missing
+  logging:
+    file: ansible-navigator.log
+    level: error
+  mode: stdout
+  playbook-artifact:
+    enable: false

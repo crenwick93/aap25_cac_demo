@@ -1,0 +1,6 @@
+---
+aap_organizations:
+- name: netops
+  description: netops
+- name: cloud
+  description: cloud

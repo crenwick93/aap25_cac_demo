@@ -1,0 +1,30 @@
+- name: Playbook to configure ansible controller post installation
+  hosts: localhost
+  connection: local
+  # Define following vars here, or in platform_configs/controller_auth.yml
+  # aap_hostname: ansible-controller-web-svc-test-project.example.com
+  # aap_username: admin
+  # aap_password: changeme
+  collections:
+    - ansible.controller
+  pre_tasks:
+    - name: Include vars from platform_configs directory
+      ansible.builtin.include_vars:
+        dir: platform_configs
+        extensions: ["yml"]
+  tasks:
+
+    - name: Run my role from the collection
+      include_role:
+        name: infra.aap_configuration.gateway_organizations
+      when: aap_organizations is defined
+
+    - name: Run my role from the collection
+      include_role:
+        name: infra.aap_configuration.gateway_teams
+      when: aap_teams is defined
+
+    - name: Run my role from the collection
+      include_role:
+        name: infra.aap_configuration.controller_roles
+      when: controller_roles is defined

@@ -1,0 +1,11 @@
+---
+aap_teams:
+# netops org
+- name: "netops-admins"
+  organization: "netops"
+- name: "netops-executors"
+  organization: "netops"
+- name: "netops-auditors"
+  organization: "netops"
+
+# cloud org

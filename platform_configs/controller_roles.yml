@@ -1,0 +1,12 @@
+---
+controller_roles:
+- team: "netops-executors"
+  organization: "netops"
+  roles:
+    - execute
+    - read
+
+- team: "netops-auditors"
+  organization: "netops"
+  roles:
+    - read
