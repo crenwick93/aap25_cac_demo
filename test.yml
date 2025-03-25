@@ -4,4 +4,7 @@
     - name: debug
       debug:
         msg: this is an example output
-
+        
+    - name: Retrieve secret from Vault
+      debug:
+        msg: "{{ lookup('hashi_vault', 'secret=secret/data/oci:password') }}"
